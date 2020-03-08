@@ -43,15 +43,22 @@
 	}
 
 	</script>
-   <center>
-    <h3>Send HTTP POST Request using PHP</h3>
-     <form>
-     Name1 : <input name="key1" id="key1" type="text" /><br />
-     Name2  : <input name="key2" id="key2" type="text" /><br />
-      <input type="button" value="Submit" onclick="submit_soap()"/>
-    </form>
-       <br>-----------
-	  <div id="json_response"></div>
-   </center>
+  <?php
+require_once("lib/nusoap.php"); 
+ $client = new SoapClient("http://localhost:52108/WebService.asmx?WSDL");
+
+    $params = array( 'Param1'  => 'Moslem', 
+                    'Param2' => 'Ganji!');
+
+    $result = $client->TestMethod($params)->TestMethodResult;
+
+    print_r( $result);
+    $params = array( 'Param1'  => 'Moslem', 
+                    'Param2' => 'Ganji!');
+echo "\n \r";
+    $result2 = $client->ShowNameFamely($params)->ShowNameFamelyResult;
+
+    print_r( $result);
+?>
 </body>
 </html>
