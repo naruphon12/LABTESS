@@ -31,7 +31,7 @@
         liff.login();
       }
     }, err => console.error(err.code, error.message));
- 
+ </script>
   <?php
 require_once("lib/nusoap.php"); 
  $client = new SoapClient("http://localhost:52108/WebService.asmx?WSDL");
