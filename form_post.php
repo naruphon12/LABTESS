@@ -1,29 +1,17 @@
 <?php
-$key1=$_POST['key1'];
-$key2=$_POST['key2'];
-$url = 'https://postman-echo.com/post';
-$data = array('key1' => $key1, 'key2' => $key2);
-$options = array(
-    'http' => array(
-        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-        'method'  => 'POST',
-        'content' => http_build_query($data)
-    )
-);
-$context  = stream_context_create($options);
-$response = file_get_contents($url, false, $context);
-if ($response === FALSE) { /* Handle error */ }
-  $json_array=json_decode($response,true); 
- function display_array_recursive($json_rec){
-		if($json_rec){
-			foreach($json_rec as $key=> $value){
-				if(is_array($value)){
-					display_array_recursive($value);
-				}else{
-					echo $key.'--'.$value.'<br>';
-				}	
-			}	
-		}	
-	}
-  	display_array_recursive($json_array);
+require_once("lib/nusoap.php"); 
+ $client = new SoapClient("http://localhost:52108/WebService.asmx?WSDL");
+
+    $params = array( 'Param1'  => 'Moslem', 
+                    'Param2' => 'Ganji!');
+
+    $result = $client->TestMethod($params)->TestMethodResult;
+
+    print_r( $result);
+    $params = array( 'Param1'  => 'Moslem', 
+                    'Param2' => 'Ganji!');
+echo "\n \r";
+    $result2 = $client->ShowNameFamely($params)->ShowNameFamelyResult;
+
+    print_r( $result2);
 ?>
