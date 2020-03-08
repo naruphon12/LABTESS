@@ -32,22 +32,20 @@
       }
     }, err => console.error(err.code, error.message));
  </script>
-  <?php
-require_once("lib/nusoap.php"); 
- $client = new SoapClient("http://localhost:52108/WebService.asmx?WSDL");
+<?php
+  
+$client = new SoapClient('http://localhost:52108/WebService.asmx?WSDL',array('trace'=>true));
+  try
+  {
+  $params->parth = 'Hello';
+  $params->name = 'World!';  
+  $result = $client->TestMethod($params)->TestMethodResult;
+  }catch(SoapFault $ex){
+    print $ex
+  }
+  echo "hello".$result
 
-    $params = array( 'Param1'  => 'Moslem', 
-                    'Param2' => 'Ganji!');
-
-    $result = $client->TestMethod($params)->TestMethodResult;
-
-    print_r( $result);
-    $params = array( 'Param1'  => 'Moslem', 
-                    'Param2' => 'Ganji!');
-echo "\n \r";
-    $result2 = $client->ShowNameFamely($params)->ShowNameFamelyResult;
-
-    print_r( $result);
 ?>
 </body>
 </html>
+
