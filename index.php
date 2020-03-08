@@ -32,5 +32,27 @@
       }
     }, err => console.error(err.code, error.message));
   </script>
+  	<script>
+	  function submit_soap(){
+		var key1=$("#key1").val();
+		var key2=$("#key2").val();
+		$.post("form_post.php",{key1:key1,key2:key2},
+		function(data){
+		  $("#json_response").html(data);
+		});
+	}
+
+	</script>
+   <center>
+    <h3>Send HTTP POST Request using PHP</h3>
+     <form>
+     Name1 : <input name="key1" id="key1" type="text" /><br />
+     Name2  : <input name="key2" id="key2" type="text" /><br />
+      <input type="button" value="Submit" onclick="submit_soap()"/>
+    </form>
+       <br>-----------
+	  <div id="json_response"></div>
+   </center>
 </body>
 </html>
+
