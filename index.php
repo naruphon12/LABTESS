@@ -31,18 +31,7 @@
         liff.login();
       }
     }, err => console.error(err.code, error.message));
-  </script>
-  	<script>
-                function submit_soap(){
-		var key1=$("#key1").val();
-		var key2=$("#key2").val();
-		$.post("form_post.php",{key1:key1,key2:key2},
-		function(data){
-		  $("#json_response").html(data);
-		});
-	}
-
-	</script>
+ 
   <?php
 require_once("lib/nusoap.php"); 
  $client = new SoapClient("http://localhost:52108/WebService.asmx?WSDL");
