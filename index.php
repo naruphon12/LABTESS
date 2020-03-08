@@ -33,21 +33,7 @@
     }, err => console.error(err.code, error.message));
   </script>
   	<script>
-    POST :"http://localhost:52108/WebService.asmx"
-Host: localhost
-Content-Type: text/xml; charset=utf-8
-Content-Length: length
-SOAPAction: "http://tempuri.org/pdftojpg"
-
-<?xml version="1.0" encoding="utf-8"?>
-<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-  <soap:Body>
-    <pdftojpg xmlns="http://tempuri.org/">
-      <JsonStr>{"Data": [{"parth": "Vm-feeduatvb_net_project$E-Document","name": "Vm-feeduatvb_net_project$E-Document"}]}</JsonStr>
-    </pdftojpg>
-  </soap:Body>
-</soap:Envelope>
-	  function submit_soap(){
+                function submit_soap(){
 		var key1=$("#key1").val();
 		var key2=$("#key2").val();
 		$.post("form_post.php",{key1:key1,key2:key2},
