@@ -46,8 +46,8 @@
    <center>
     <h3>Send HTTP POST Request using PHP</h3>
      <form>
-     Name1 : <input name="key1" id="key1" type="text" /><br />
-     Name2  : <input name="key2" id="key2" type="text" /><br />
+     customer_code : <input name="key1" id="key1" type="text" /><br />
+     User_id  : <input name="key2" id="key2" type="text" /><br />
       <input type="button" value="Submit" onclick="submit_soap()"/>
     </form>
        <br>-----------
