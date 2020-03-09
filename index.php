@@ -13,7 +13,6 @@
   <p id="displayName"></p>
   <p id="statusMessage"></p>
   <p id="getDecodedIDToken"></p>
-  <div id="searchresultsC"></div>
   <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
   <script>
     function runApp() {
@@ -27,26 +26,28 @@
     }
     liff.init({ liffId: "1653805513-OWPbPoe0" }, () => {
       if (liff.isLoggedIn()) {
-         runApp()
-         cou()
+        runApp()
       } else {
         liff.login();
       }
     }, err => console.error(err.code, error.message));
  </script>
- <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
- <script type="text/javascript">
- function cou() {
-      $.ajax({
-                type: "POST",
-                url: "WebService.asmx/countnum",
-                data: { a: '2', b: '5' }, 
-                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-                dataType: "text", 
-                success: function (data) {
-                    $("#searchresultsC").html(data); 
-                }
-            });
- </script>
+<?php
+  echo "hello1"
+  echo "hello1"
+$client = new SoapClient('http://localhost:52108/WebService.asmx?WSDL');
+echo $client
+try
+  {
+  $params->parth = 'Hello';
+  $params->name = 'World!';  
+  $result = $client->TestMethod($params)->TestMethodResult;
+  }catch(SoapFault $ex){
+    print $ex
+  }
+  echo "hello".$result
+
+?>
 </body>
 </html>
+
