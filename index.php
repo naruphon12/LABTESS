@@ -26,6 +26,19 @@
     }
     liff.init({ liffId: "1653805513-OWPbPoe0" }, () => {
       if (liff.isLoggedIn()) {
+        $.ajax({
+    type: "POST",
+    url: "WebService.asmx/WebService.asmx",
+    data: "{ a: '1', b: '6' }",
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function (data) {
+        var myData = data.d;
+        alert(myData.length + " hellos");
+        for (var i = 0; i < myData.length; i++) {
+            alert(myData[i].Greeting + " " + myData[i].Name);
+        }
+    }
         runApp()
       } else {
         liff.login();
