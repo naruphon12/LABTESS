@@ -18,17 +18,6 @@
   <script>
     function runApp() {
       liff.getProfile().then(profile => {
-        $.ajax({
-                type: "POST",
-                url: "WebService.asmx/countnum",
-                data: { a: '2', b: '5' }, 
-                        
-                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-                dataType: "text", 
-                success: function (data) {
-                    $("#searchresultsC").html(data); 
-                }
-            });
         document.getElementById("pictureUrl").src = profile.pictureUrl;
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
@@ -39,11 +28,24 @@
     liff.init({ liffId: "1653805513-OWPbPoe0" }, () => {
       if (liff.isLoggedIn()) {
          runApp()
-
+         cou()
       } else {
         liff.login();
       }
     }, err => console.error(err.code, error.message));
+ </script>
+ <script type="text/javascript">
+ function cou() {
+      $.ajax({
+                type: "POST",
+                url: "WebService.asmx/countnum",
+                data: { a: '2', b: '5' }, 
+                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                dataType: "text", 
+                success: function (data) {
+                    $("#searchresultsC").html(data); 
+                }
+            });
  </script>
 </body>
 </html>
