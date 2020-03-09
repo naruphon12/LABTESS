@@ -32,11 +32,6 @@
       }
     }, err => console.error(err.code, error.message));
  </script>
-<?php
- $result="uuuuu"
-  echo "hello".$result
-
-?>
 </body>
 </html>
 
