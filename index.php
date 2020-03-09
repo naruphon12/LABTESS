@@ -34,6 +34,7 @@
       }
     }, err => console.error(err.code, error.message));
  </script>
+ <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
  <script type="text/javascript">
  function cou() {
       $.ajax({
