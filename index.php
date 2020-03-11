@@ -32,22 +32,7 @@
       }
     }, err => console.error(err.code, error.message));
  </script>
-<?php
-  echo "hello1"
-  echo "hello1"
-$client = new SoapClient('http://localhost:52108/WebService.asmx?WSDL');
-echo $client
-try
-  {
-  $params->parth = 'Hello';
-  $params->name = 'World!';  
-  $result = $client->TestMethod($params)->TestMethodResult;
-  }catch(SoapFault $ex){
-    print $ex
-  }
-  echo "hello".$result
 
-?>
 </body>
 </html>
 
