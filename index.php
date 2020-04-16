@@ -16,7 +16,7 @@
       <h2 style="color:#ff6a00; text-align:center; ">ลงทะเบียน</h2>
 
   <hr>
-    <form action="Register.php" method="post">
+    <form action="Registerline.php" method="post">
       <div class="col-sm-12">
         <div class="row">
           <div class="col-sm-6 form-group">
