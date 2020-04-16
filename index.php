@@ -67,7 +67,7 @@
         inputLineuserid.value = profile.userId;
       }).catch(err => console.error(err));
     }
-    liff.init({ liffId: "1653935865-zwedWdLV" }, () => {
+    liff.init({ liffId: "1653805513-OWPbPoe0" }, () => {
       if (liff.isLoggedIn()) {
         runApp()
       } else {
