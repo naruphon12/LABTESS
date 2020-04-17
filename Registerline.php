@@ -1,6 +1,10 @@
 
 <?php
 
+echo $_POST[name];
+echo $_POST[surname];
+echo $_POST[surname];
+echo $_POST[surname];
 $request = new HttpRequest();
 $request->setUrl('http://vm-feeduat/FeedLineBot/WebService.asmx');
 $request->setMethod(HTTP_METH_POST);
