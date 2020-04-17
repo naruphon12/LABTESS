@@ -49,33 +49,8 @@
   <br>
   </div>
 
- <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+ 
 
-
-  <script>
-    
-    function runApp() {
-      liff.getProfile().then(profile => {
-        var inputLineuserid = document.getElementById("lineuserid"); 
-
-        document.getElementById("pictureUrl").src = profile.pictureUrl;
-        //document.getElementById("lineuserid").innerHTML =  profile.userId;
-        document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
-        document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
-        document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
-
-        inputLineuserid.value = profile.userId;
-      }).catch(err => console.error(err));
-    }
-    liff.init({ liffId: "1653805513-OWPbPoe0" }, () => {
-      if (liff.isLoggedIn()) {
-        runApp()
-      } else {
-        liff.login();
-      }
-    }, err => console.error(err.code, error.message));
-    
-  </script>
 
   </body>
 </html>
