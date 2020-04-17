@@ -1,3 +1,4 @@
+
 <?php
 
 $request = new HttpRequest();
@@ -5,7 +6,7 @@ $request->setUrl('http://vm-feeduat/FeedLineBot/WebService.asmx');
 $request->setMethod(HTTP_METH_POST);
 
 $request->setHeaders(array(
-  'postman-token' => 'f7c1028b-f145-161f-1bb4-56f6c762d7eb',
+  'postman-token' => 'ebfde170-7ac1-e13c-4c7b-9454c724ac3f',
   'cache-control' => 'no-cache',
   'soapaction' => 'http://tempuri.org/registerline',
   'content-length' => 'length',
@@ -29,4 +30,3 @@ try {
 } catch (HttpException $ex) {
   echo $ex;
 }
-?>
