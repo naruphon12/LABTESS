@@ -53,29 +53,7 @@
         var email = $("#email").val();
         var msg_subject = $("#msg_subject").val();
         var message = $("#message").val();
-        
-	var url = "http://vm-feeduat/FeedLineBot/WebService.asmx";
          $.ajax({
-        type: "POST",
-        url: url + "/registerline",
-        data: "{variant_id:'1'}",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: OnSuccessCall,
-        error: OnErrorCall
-    });
-
-    function OnSuccessCall(response) {
-        alert(response.d);
-    }
-
-
-    function OnErrorCall(response) {
-        alert(response.status + " " + response.statusText);
-    }
-	      
-      
-            $.ajax({
             type: "POST",
             url: "/formProcess.php",
             dataType: "json",
