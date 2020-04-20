@@ -16,7 +16,7 @@
       <h2 style="color:#ff6a00; text-align:center; ">ลงทะเบียน</h2>
 
   <hr>
-    <form action="Registerline.php" method="post">
+    <form action="index.php" method="post">
       <div class="col-sm-12">
         <div class="row">
           <div class="col-sm-6 form-group">
@@ -48,8 +48,41 @@
   <br>
   <br>
   </div>
-
-
-
   </body>
+  <script type="text/javascript">
+  $(document).ready(function() {
+
+
+      $('#submit').click(function(e){
+        e.preventDefault();
+
+
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var msg_subject = $("#msg_subject").val();
+        var message = $("#message").val();
+
+
+        $.ajax({
+            type: "POST",
+            url": "http://vm-feeduat/FeedLineBot/WebService.asmx",
+            dataType: "json",
+            data: {name:name, email:email, msg_subject:msg_subject, message:message},
+            success : function(data){
+                if (data.code == "200"){
+                    alert("Success: " +data.msg);
+                } else {
+                    $(".display-error").html("<ul>"+data.msg+"</ul>");
+                    $(".display-error").css("display","block");
+                }
+            }
+        });
+
+
+      });
+  });
+</script>
 </html>
+
+
+
