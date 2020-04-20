@@ -26,13 +26,10 @@ $request->setBody('<?xml version="1.0" encoding="utf-8"?>
     </registerline>
   </soap:Body>
 </soap:Envelope>');
-echo $_POST[name];
-echo $_POST[surname];
-echo $_POST[surname];
-echo $_POST[surname];
+
 try {
   $response = $request->send();
-  echo $response
+
   echo $response->getBody();
 } catch (HttpException $ex) {
   echo $ex;
