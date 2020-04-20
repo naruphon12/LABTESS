@@ -33,7 +33,7 @@
         <textarea id="message" rows="7" placeholder="Massage" class="form-control"></textarea>
       </div>  
     </div>
-    <button type="submit" id="submit" class="btn btn-success"><i class="fa fa-check"></i> Send Message</button>
+    <button type="submit" id="submit" class="btn btn-success"><i class="fa fa-check"></i> Register </button>
   </form>
 </div>
 
@@ -74,10 +74,7 @@
         alert(response.status + " " + response.statusText);
     }
 	      
-	      
-	      
-	      
-	      
+      
             $.ajax({
             type: "POST",
             url: "/formProcess.php",
