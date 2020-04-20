@@ -9,7 +9,7 @@
 
 
 <div class="container">
-  <h1>Php Ajax Form Validation Example</h1>
+  <h1>Register LINE</h1>
   <form role="form" id="contactForm" class="contact-form" data-toggle="validator" class="shake">
     <div class="alert alert-danger display-error" style="display: none">
     </div>
@@ -53,31 +53,8 @@
         var email = $("#email").val();
         var msg_subject = $("#msg_subject").val();
         var message = $("#message").val();
-        var settings = {
-          "async": true,
-          "crossDomain": true,
-          "url": "http://vm-feeduat/FeedLineBot/WebService.asmx",
-          "method": "POST",
-          "headers": {
-          "host": "vm-feeduat",
-          "content-type": "text/xml; charset=utf-8",
-          "content-length": "length",
-          "soapaction": "http://tempuri.org/registerline",
-           "cache-control": "no-cache",
-           "postman-token": "4020095d-1d33-8c9b-ce6c-90bb6c293386"
-         },
-        "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <soap:Body>\r\n    <registerline xmlns=\"http://tempuri.org/\">\r\n      <JsonStr>{\"Data\":[{\"User_ID\":\"1111111111\",\"Phone_No\":\"0882219724\",\"Email\":\"naruphon.boo\",\"Nameline\":\"ball\"}]}</JsonStr>\r\n    </registerline>\r\n  </soap:Body>\r\n</soap:Envelope>"
-     }
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-	      
-	      
-	      
-	      
-
-        $.ajax({
+        
+            $.ajax({
             type: "POST",
             url: "/formProcess.php",
             dataType: "json",
