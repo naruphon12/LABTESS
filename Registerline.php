@@ -1,7 +1,6 @@
 
 <?php
 $request = new HttpRequest();
-error_log(print_r($request, true));
 $request->setUrl('http://vm-feeduat/FeedLineBot/WebService.asmx');
 $request->setMethod(HTTP_METH_POST);
 echo $_POST[name];
@@ -28,10 +27,8 @@ $request->setBody('<?xml version="1.0" encoding="utf-8"?>
 
 try {
   $response = $request->send();
-error_log(print_r($response, true));
-  echo $response->getBody();
+   echo $response->getBody();
 } catch (HttpException $ex) {
-  error_log(print_r($ex, true));
-  echo $ex;
+ echo $ex;
 }
 ?>
